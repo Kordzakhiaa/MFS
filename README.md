@@ -9,11 +9,12 @@ This is **not** an Angular or SPA framework app. It uses plain HTML, CSS, and va
 - Landing sections: hero, category grid, brand story, fitment inquiry form
 - Category filters on the home collection
 - Client-side catalog: `#/category/…`, `#/products/downpipes`, `#/product/{id}`
-- Downpipe product line (BMW N20, N26, B46, B47, B58) with photos and pricing
+- BMW downpipe product line (N20, N26, B46, B47, B58) with photos; the B47 price is still unavailable
 - Shopping cart stored in `localStorage` (`mfs-cart-v2`)
 - Fitment brief: generate and download a plain-text inquiry on the device
 
 Online checkout and backend contact are **not** connected; copy in the UI reflects preview/demo behavior.
+Only downpipes currently have product records. The other category routes show an inquiry prompt, and the Mercedes, Audi, Volkswagen, and Alfa Romeo downpipe filters currently return no products.
 
 ## Project structure
 
@@ -39,7 +40,7 @@ Product image paths are also embedded in `index.html` as a small JSON block (`#m
 ## Requirements
 
 - A modern browser
-- **Optional:** [Node.js](https://nodejs.org/) for `npm start` and `npm run verify` (no project dependencies are installed; `serve` is pulled via `npx`)
+- **Optional:** [Node.js](https://nodejs.org/) with npm/npx for `npm start` and `npm run verify`. There are no installed project dependencies; `npm start` downloads `serve` through `npx` when it is not already cached, so its first run may require internet access.
 
 ## Quick start
 
@@ -61,7 +62,7 @@ Open `index.html` in a browser. Relative paths to CSS, JS, and images work; hash
 | Command | Description |
 | ------- | ----------- |
 | `npm start` | Serves the project root on port **3000** |
-| `npm run verify` | Ensures every `src`/`href` in `index.html` and entries in `data/product-images.json` resolve to files on disk |
+| `npm run verify` | Ensures local `src`/`href` references in `index.html` and entries in `data/product-images.json` resolve to files on disk |
 
 ## Routing (hash URLs)
 
@@ -80,16 +81,20 @@ Open `index.html` in a browser. Relative paths to CSS, JS, and images work; hash
 3. Extend the `products` array in `js/catalog.js`.
 4. Run `npm run verify`.
 
+Set a product's `price` to `null` when it should be visible but not purchasable. Product data currently lives in `js/catalog.js`; `data/product-images.json` is an asset manifest used by verification, not the catalog data source.
+
 ## Legacy / cleanup
 
 - `index.original.html` — single ~12 MB file with inline base64 images (kept for reference).
 - `archive/MFS-*-Edition.html` — identical copies of that monolith; safe to delete if you do not need them.
 
-To re-split from the monolith backup (destructive to current modular files if you overwrite manually):
+To regenerate the modular site from the monolith backup:
 
 ```bash
 python3 scripts/refactor-from-monolith.py
 ```
+
+> **Warning:** this script immediately overwrites `index.html`, `css/main.css`, the files under `js/`, and `data/product-images.json`. Commit or back up current changes before running it. It recreates the version embedded in `index.original.html`, so later modular edits may be lost.
 
 ## License
 
