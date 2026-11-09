@@ -96,6 +96,26 @@ python3 scripts/refactor-from-monolith.py
 
 > **Warning:** this script immediately overwrites `index.html`, `css/main.css`, the files under `js/`, and `data/product-images.json`. Commit or back up current changes before running it. It recreates the version embedded in `index.original.html`, so later modular edits may be lost.
 
+## SEO, link previews, and Google
+
+Production site: [https://www.mfs.ge/](https://www.mfs.ge/)
+
+- **Open Graph / Twitter** meta tags in `index.html` control title, description, and image when links are pasted in chat or social apps.
+- **Share image:** `assets/images/og-image.jpg` (1200×630). Refresh previews with [Meta Sharing Debugger](https://developers.facebook.com/tools/debug/) or LinkedIn Post Inspector after deploy.
+- **`robots.txt`** allows crawlers and points to the sitemap.
+- **`sitemap.xml`** lists the homepage for Google.
+- **JSON-LD** (`Organization`, `WebSite`) helps search engines understand the brand.
+
+**Getting on Google** (manual, one-time):
+
+1. Open [Google Search Console](https://search.google.com/search-console).
+2. Add property **URL prefix** `https://www.mfs.ge/`.
+3. Verify via DNS (Cloudflare) or HTML file/meta tag Cloudflare gives you.
+4. Submit sitemap: `https://www.mfs.ge/sitemap.xml`.
+5. Use **URL inspection** → **Request indexing** for the homepage.
+
+Indexing can take days to weeks for a new domain. Hash routes (`#/products/...`) are not separate URLs for Google; the homepage is what gets indexed unless you add server-rendered pages later.
+
 ## License
 
 Not specified in the repository. Add a license file if you plan to distribute or open-source the project.
