@@ -7,7 +7,14 @@ const index = readFileSync(join(root, 'index.html'), 'utf8');
 
 const assetRefs = [
   ...index.matchAll(/\b(?:src|href)="([^"]+)"/g),
-].map((m) => m[1]).filter((p) => !p.startsWith('#') && !p.startsWith('mailto:'));
+]
+  .map((m) => m[1])
+  .filter(
+    (p) =>
+      !p.startsWith('#') &&
+      !p.startsWith('mailto:') &&
+      !/^https?:\/\//i.test(p),
+  );
 
 const missing = assetRefs.filter((rel) => {
   const path = join(root, rel.split('?')[0]);
@@ -25,6 +32,14 @@ const productImages = JSON.parse(
 for (const [id, rel] of Object.entries(productImages)) {
   if (!existsSync(join(root, rel))) {
     console.error(`Missing product image for ${id}: ${rel}`);
+    process.exit(1);
+  }
+}
+
+const seoFiles = ['robots.txt', 'sitemap.xml', 'assets/images/og-image.jpg'];
+for (const rel of seoFiles) {
+  if (!existsSync(join(root, rel))) {
+    console.error(`Missing SEO asset: ${rel}`);
     process.exit(1);
   }
 }
