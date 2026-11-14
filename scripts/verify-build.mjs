@@ -44,4 +44,17 @@ for (const rel of seoFiles) {
   }
 }
 
+const mainCss = readFileSync(join(root, 'css/main.css'), 'utf8');
+for (const m of mainCss.matchAll(/@import url\("([^"]+)"\)/g)) {
+  const rel = join('css', m[1]);
+  if (!existsSync(join(root, rel))) {
+    console.error(`Missing CSS partial: ${rel}`);
+    process.exit(1);
+  }
+}
+if (!existsSync(join(root, 'assets/images/hero-background.jpg'))) {
+  console.error('Missing assets/images/hero-background.jpg');
+  process.exit(1);
+}
+
 console.log(`OK: index.html references ${assetRefs.length} assets; all present.`);

@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Header Make
+   ========================================================================== */
+
+.header-make {
+  margin: 0;
+}
+.header-make select {
+  margin: 0;
+  padding: 0 0 8px;
+  background: #000;
+  color: #fff;
+  border: 0;
+  border-bottom: 1px solid #555;
+  font-size: 9px;
+  letter-spacing: 1px;
+  width: auto;
+  max-width: 155px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.product-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-block: 1px solid #333;
+}
+.product-toolbar label {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.product-toolbar select {
+  background: #111;
+  border: 1px solid #555;
+  padding: 12px;
+  width: 200px;
+  margin-top: 10px;
+  color: white;
+}
+.product-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+  background: #151515;
+  color: #aaa;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+}
+.product-placeholder strong {
+  font-size: 45px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  color: #ddd;
+}
+.product-placeholder span {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.product-image-panel:has(.product-placeholder) {
+  background: #151515;
+}
+.product-image-panel .product-placeholder {
+  min-height: 330px;
+}
+.purchase-row button:disabled {
+  background: #333;
+  color: #999;
+  cursor: default;
+}
+.unpriced {
+  color: #aaa;
+  font-size: 18px;
+}
+.cart-item + .cart-item {
+  border-top: 0;
+}
+@media (max-width: 1100px) {
+  header nav {
+    gap: 15px;
+  }
+  .header-make select {
+    max-width: 130px;
+  }
+}
+@media (max-width: 700px) {
+  .header-make select {
+    max-width: 115px;
+    font-size: 8px;
+  }
+  header nav a:last-of-type {
+    display: none;
+  }
+  .product-toolbar select {
+    width: 170px;
+  }
+}

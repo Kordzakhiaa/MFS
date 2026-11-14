@@ -1,0 +1,63 @@
+/* Header: MFS logo centered above a centered nav row (brand icon row removed) */
+header {
+  position: relative;
+  display: block;
+  height: 155px;
+  min-height: 155px;
+  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+}
+header > .brand {
+  position: absolute;
+  left: 50%;
+  top: 37px;
+  transform: translate(-50%, 0);
+  width: 115px;
+  max-width: 36vw;
+  margin: 0;
+}
+header > nav {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.5vw, 28px);
+  margin: 0;
+  width: auto;
+  max-width: none;
+}
+header .header-make {
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  header > nav {
+    gap: 16px;
+  }
+  header nav > a[href="#fitment"] {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    height: 165px;
+    min-height: 165px;
+  }
+  header > .brand {
+    top: 32px;
+    width: 100px;
+  }
+  header > nav {
+    bottom: 12px;
+    gap: 10px 14px;
+  }
+  header > nav > a[href="#brand"],
+  header > nav > a[href="#parts"] {
+    display: none;
+  }
+}

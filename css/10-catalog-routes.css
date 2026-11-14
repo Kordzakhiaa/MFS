@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Catalog Routes
+   ========================================================================== */
+
+[hidden] {
+  display: none !important;
+}
+#catalog-route {
+  min-height: 70vh;
+  padding: 45px 5% 85px;
+  background: #080808;
+  color: #fff;
+}
+.route-product {
+  padding: 25px 0;
+  position: relative;
+}
+.route-product .product-info h2 {
+  font-size: 40px;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 0 0 40px;
+}
+.breadcrumbs a {
+  color: white;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+}
+.catalog-page-title {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 300;
+  letter-spacing: -2px;
+  margin: 0 0 40px;
+  outline: none;
+}
+.subcategory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.subcategory-card {
+  padding: 35px;
+  background: #101010;
+  border: 1px solid #333;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.subcategory-card:hover {
+  opacity: 1;
+  border-color: #aaa;
+}
+.subcategory-card .tiny {
+  color: #888;
+}
+.subcategory-card h2 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  margin: 25px 0;
+}
+.subcategory-card .link {
+  font-size: 9px;
+}
+.listing-count {
+  color: #999;
+  border-bottom: 1px solid #333;
+  padding-bottom: 25px;
+}
+.catalog-empty {
+  padding: 40px 0;
+  border-top: 1px solid #333;
+}
+.catalog-empty h2 {
+  font-size: 35px;
+  letter-spacing: -1px;
+}
+.catalog-empty p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.category-open {
+  width: 100%;
+  justify-content: space-between;
+}
+.category-group {
+  position: relative;
+}
+.category-group:has(.category-open):hover {
+  border-color: #444;
+}
+.category-open:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.category-open:focus-visible {
+  outline: 2px solid #111;
+}
+.route-product .product-back {
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+  #catalog-route {
+    padding-top: 30px;
+  }
+  .subcategory-grid {
+    gap: 12px;
+  }
+  .subcategory-card {
+    padding: 20px 15px;
+    min-height: 190px;
+  }
+  .subcategory-card h2 {
+    font-size: 23px;
+  }
+  .subcategory-card .tiny {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .subcategory-card .link {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .catalog-page-title {
+    font-size: 42px;
+  }
+  .breadcrumbs {
+    font-size: 10px;
+    gap: 8px;
+  }
+}

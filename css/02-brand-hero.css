@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Brand Hero
+   ========================================================================== */
+
+.brand {
+  display: block;
+  width: 100px;
+  font-size: 0;
+  transform: none;
+}
+.logo-crop {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3.2;
+  width: 100%;
+}
+.logo-crop img {
+  position: absolute;
+  width: 114%;
+  max-width: none;
+  height: auto;
+  left: -7%;
+  top: -53%;
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
+}
+.wordmark {
+  font-size: initial;
+  line-height: normal;
+  transform: none;
+  padding: 0;
+  width: min(42%, 600px);
+  margin: 65px 0 60px;
+  letter-spacing: normal;
+}
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("../assets/images/hero-background.jpg");
+  background-size: cover;
+  background-position: 55% 56%;
+  transform: scale(1.09);
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.47) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.91) 100%
+  );
+}
+.hero .intro {
+  color: #ddd;
+}
+.hero-end {
+  border-color: #ffffff50;
+}
+.hero-end p {
+  color: #ddd;
+}
+.object {
+  background: #fff;
+  height: 260px;
+  margin-top: 24px;
+}
+.product-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s;
+}
+.card:hover .product-photo {
+  transform: scale(1.055);
+}
+.intake-photo {
+  background: #000;
+}
+.intake-photo .product-photo {
+  object-fit: cover;
+}
+.card .link {
+  letter-spacing: 1.3px;
+}
+@media (max-width: 700px) {
+  .wordmark {
+    width: 65%;
+    margin: 65px 0 90px;
+  }
+  .hero:before {
+    background-position: 53% 50%;
+    transform: scale(1.1);
+  }
+  .hero:after {
+    background: linear-gradient(180deg, #0008, #0005 35%, #000e 100%);
+  }
+  .object {
+    height: 280px;
+  }
+  .brand {
+    width: 85px;
+  }
+}

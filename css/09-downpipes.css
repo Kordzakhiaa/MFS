@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Downpipes
+   ========================================================================== */
+
+.downpipes-category {
+  width: min(1100px, 94vw);
+  padding-top: 65px;
+}
+
+.downpipes-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 25px 0 30px;
+  border-bottom: 1px solid #333;
+}
+.downpipes-heading h2 {
+  font-size: 48px;
+  letter-spacing: -2px;
+}
+.downpipes-heading > .tiny {
+  color: #888;
+}
+.downpipes-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding-top: 30px;
+}
+.downpipe-product-card {
+  display: block;
+  border: 1px solid #333;
+}
+.downpipe-product-card:hover {
+  opacity: 1;
+  border-color: #999;
+}
+.downpipe-card-photo {
+  background: #eee;
+  aspect-ratio: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 25px;
+}
+.downpipe-card-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+.downpipe-product-card:hover img {
+  transform: scale(1.035);
+}
+.downpipe-card-details {
+  padding: 25px;
+}
+.downpipe-card-details > .tiny {
+  color: #999;
+}
+.downpipe-card-details h3 {
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin: 16px 0 10px;
+}
+.downpipe-card-details p {
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.downpipe-card-price {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 16px;
+}
+.product-back {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #aaa;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.product-image-panel {
+  background: #ededeb;
+  padding: 30px;
+}
+.product-image-panel img {
+  object-fit: contain;
+}
+.downpipe-product-card:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 5px;
+}
+@media (max-width: 700px) {
+  .downpipes-product-grid {
+    gap: 12px;
+  }
+  .downpipes-heading h2 {
+    font-size: 38px;
+  }
+  .downpipe-card-photo {
+    padding: 12px;
+    aspect-ratio: 1;
+  }
+  .downpipe-card-details {
+    padding: 15px 12px;
+  }
+  .downpipe-card-details h3 {
+    font-size: 18px;
+  }
+  .downpipe-card-details p {
+    font-size: 10px;
+  }
+  .downpipe-card-details > .tiny {
+    font-size: 8px;
+  }
+  .downpipe-card-price {
+    font-size: 13px;
+  }
+  .product-image-panel {
+    padding: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .downpipe-card-photo img {
+    transition: none;
+  }
+}
