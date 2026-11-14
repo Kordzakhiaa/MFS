@@ -21,7 +21,10 @@ Only downpipes currently have product records. The other category routes show an
 ```
 MFS/
 ├── index.html                 # Page shell and markup
-├── css/main.css               # All site styles
+├── css/
+│   ├── main.css               # Entry: @imports partials (order = cascade)
+│   ├── 01-base.css … 16-header-nav-current.css
+│   └── (run `node scripts/format-css.mjs` only when re-splitting legacy CSS)
 ├── js/
 │   ├── interactions.js        # Collection filters + fitment brief
 │   ├── catalog.js             # Routing, products, cart

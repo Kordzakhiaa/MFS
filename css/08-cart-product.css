@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Cart Product
+   ========================================================================== */
+
+.cart-trigger {
+  border: 0;
+  border-bottom: 1px solid #777;
+  background: transparent;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 0 0 8px;
+  white-space: nowrap;
+}
+.n20-catalog-link {
+  padding-left: 15px !important;
+  border-left: 1px solid #aaa;
+  margin: 4px 0 15px;
+}
+.n20-catalog-link small {
+  display: block;
+  color: #666;
+  font-size: 11px;
+  margin-top: 9px;
+}
+.shop-dialog {
+  color: #fff;
+  background: #080808;
+  border: 1px solid #444;
+  padding: 60px 40px 40px;
+  width: min(1100px, 94vw);
+  max-height: 90dvh;
+  overflow: auto;
+}
+.shop-dialog::backdrop {
+  background: #000c;
+  backdrop-filter: blur(6px);
+}
+.dialog-close {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  background: none;
+  color: #fff;
+  border: 0;
+  font-size: 22px;
+  padding: 8px;
+}
+.product-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 45px;
+}
+.product-image-panel {
+  background: #000;
+  display: flex;
+  align-items: center;
+  min-height: 360px;
+}
+.product-image-panel img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.product-info h2 {
+  font-size: 40px;
+  letter-spacing: -1.5px;
+  margin: 20px 0 12px;
+}
+.product-fitment {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.7;
+}
+.product-price {
+  font-size: 35px;
+  margin: 25px 0;
+}
+.product-price span {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.product-description {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #aaa;
+}
+.product-specs {
+  margin: 25px 0;
+  font-size: 12px;
+}
+.product-specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid #333;
+}
+.product-specs dt {
+  color: #999;
+}
+.product-specs dd {
+  margin: 0;
+  text-align: right;
+}
+.purchase-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+.purchase-row input {
+  width: 75px;
+  margin: 0;
+  padding: 13px;
+  border: 1px solid #555;
+  background: #111;
+  color: #fff;
+}
+.purchase-row button {
+  flex: 1;
+  border: 0;
+  background: #fff;
+  color: #000;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding: 17px;
+}
+#add-product label {
+  margin-bottom: 12px;
+}
+#product-cart-status,
+#cart-status {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.text-action {
+  border: 0;
+  border-bottom: 1px solid #777;
+  color: #fff;
+  background: transparent;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding: 12px 0;
+}
+.cart-dialog {
+  width: min(760px, 94vw);
+}
+.cart-dialog h2 {
+  font-size: 45px;
+  margin: 25px 0 35px;
+}
+.cart-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 25px;
+  padding: 25px 0;
+  border-block: 1px solid #333;
+}
+.cart-item img {
+  width: 100%;
+  align-self: center;
+}
+.cart-item h3 {
+  font-weight: 400;
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+.cart-item p {
+  font-size: 12px;
+  color: #aaa;
+}
+.cart-controls {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cart-controls input {
+  width: 70px;
+  padding: 10px;
+  border: 1px solid #555;
+  margin-top: 6px;
+}
+.cart-controls label {
+  margin: 0;
+}
+.cart-controls button {
+  background: transparent;
+  border: 0;
+  color: #aaa;
+  text-decoration: underline;
+  font-size: 11px;
+  padding: 10px;
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 23px;
+  margin: 30px 0;
+}
+.cart-empty {
+  font-size: 15px;
+  color: #aaa;
+  padding: 25px 0;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  header nav {
+    gap: 12px;
+  }
+  .shop-dialog {
+    padding: 60px 22px 28px;
+  }
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .product-image-panel {
+    min-height: 0;
+  }
+  .product-info h2 {
+    font-size: 34px;
+  }
+  .cart-item {
+    grid-template-columns: 85px 1fr;
+    gap: 15px;
+  }
+}

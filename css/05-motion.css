@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Motion
+   ========================================================================== */
+
+@keyframes mfs-logo-arrive {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes mfs-line-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes mfs-photo-reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.16);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.09);
+  }
+}
+@keyframes mfs-copy-arrive {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  header > .brand {
+    animation: mfs-logo-arrive 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  header:after {
+    display: none;
+  }
+  .hero:before {
+    animation: mfs-photo-reveal 1.7s cubic-bezier(0.2, 0.65, 0.2, 1) 0.25s both;
+  }
+  .hero .intro {
+    animation: mfs-copy-arrive 0.8s ease 0.45s both;
+  }
+  .hero h1 {
+    animation: mfs-copy-arrive 0.95s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s both;
+  }
+  .hero-end > div {
+    animation: mfs-copy-arrive 0.9s ease 0.85s both;
+  }
+  header nav {
+    animation: mfs-copy-arrive 0.7s ease 0.3s both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+  }
+}

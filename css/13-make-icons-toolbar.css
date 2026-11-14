@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Make Icons Toolbar
+   ========================================================================== */
+
+.make-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.make-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #aaa;
+  min-width: 42px;
+  padding: 7px 4px;
+  border-bottom: 1px solid transparent;
+  font-size: 7px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.make-icons a:hover,
+.make-icons a[aria-pressed="true"] {
+  color: #fff;
+  opacity: 1;
+  border-color: #fff;
+}
+.make-icons svg {
+  display: block;
+}
+.product-toolbar {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.product-toolbar > .make-icons {
+  margin-left: 12px;
+}
+.product-toolbar > #product-result-count {
+  margin-left: auto;
+}
+.make-empty {
+  grid-column: 1/-1;
+  color: #aaa;
+  font-size: 14px;
+  padding: 30px 0;
+}
+header .header-make select {
+  max-width: 140px;
+}
+header nav a:last-of-type {
+  display: block;
+}
+@media (max-width: 1000px) {
+  header nav a:not(:last-child) {
+    display: flex;
+  }
+  header nav > a[href="#fitment"] {
+    display: none;
+  }
+  header > nav {
+    gap: 16px;
+  }
+}
+@media (max-width: 700px) {
+  header > nav > a[href="#brand"],
+  header > nav > a[href="#parts"] {
+    display: none;
+  }
+  header .header-make select {
+    max-width: none;
+  }
+  .product-toolbar {
+    gap: 18px;
+  }
+  .product-toolbar > .make-icons {
+    margin-left: 0;
+    gap: 10px;
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .product-toolbar > #product-result-count {
+    font-size: 8px;
+  }
+  .product-toolbar .make-icons a {
+    min-width: 40px;
+    font-size: 7px;
+  }
+}

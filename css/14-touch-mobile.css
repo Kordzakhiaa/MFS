@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Touch Mobile
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  overflow-x: clip;
+}
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+img {
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  input,
+  select,
+  textarea,
+  .header-make select {
+    font-size: 16px !important;
+  }
+  .header-make select {
+    width: 175px !important;
+    max-width: 175px !important;
+  }
+  .cart-trigger,
+  .make-icons a,
+  .text-action,
+  .product-back {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .make-icons a {
+    display: flex;
+    min-width: 44px;
+  }
+  .cart-trigger {
+    padding: 8px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+  .product-layout,
+  .product-info {
+    min-width: 0;
+  }
+  .product-specs dd {
+    overflow-wrap: anywhere;
+  }
+  .shop-dialog {
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+  .category-group h3 {
+    overflow-wrap: anywhere;
+  }
+  .product-toolbar {
+    align-items: center;
+  }
+  .product-toolbar select {
+    font-size: 16px;
+  }
+  .product-toolbar > .make-icons {
+    gap: 4px;
+  }
+  .purchase-row button {
+    min-height: 48px;
+  }
+  .dialog-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .inquiry,
+  .brand-story {
+    gap: 35px;
+  }
+}
