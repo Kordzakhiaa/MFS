@@ -62,9 +62,7 @@
 <header>
   <a class="brand" href="#" aria-label="MFS home"><span class="logo-crop"><img src="assets/images/mfs-logo.jpg" alt="MFS"></span></a>
 <nav>
-  <a href="#parts">PRODUCTS</a><label class="header-make">
-  <span class="sr-only">Choose your make</span><select id="header-make" aria-label="Choose your make"><option value="">Choose your make</option><option value="BMW">BMW</option><option value="Mercedes">Mercedes</option><option value="Audi">Audi</option><option value="Volkswagen">Volkswagen</option><option value="Alfa Romeo">Alfa Romeo</option></select></label>
-<a href="#brand">ABOUT US</a><a href="#fitment">YOUR BUILD ↗</a><button type="button" class="cart-trigger" id="cart-open">
+  <a href="#parts">PRODUCTS</a><a href="#brand">ABOUT US</a><a href="#fitment">YOUR BUILD ↗</a><button type="button" class="cart-trigger" id="cart-open">
   CART (<span id="cart-count">0</span>)</button>
 </nav>
 </header>
@@ -90,8 +88,24 @@
 
 <section class="collection" id="parts">
   <div class="section-top">
-  <span class="tiny">01 / The collection</span><h2>
-  Every detail.<br><i>Your signature.</i></h2>
+  <div class="vehicle-finder" aria-labelledby="vehicle-finder-title">
+    <span class="tiny">01 / Find your fit</span>
+    <h2 id="vehicle-finder-title">Choose your model.</h2>
+    <div class="vehicle-steps">
+      <label><span><b>01</b> Brand</span>
+        <select id="vehicle-make" aria-describedby="vehicle-selection-status">
+          <option value="">Select brand</option>
+        </select>
+      </label>
+      <label><span><b>02</b> Model</span>
+        <select id="vehicle-model" disabled aria-describedby="vehicle-selection-status">
+          <option value="">Select model</option>
+        </select>
+      </label>
+    </div>
+    <p class="vehicle-selection-status" id="vehicle-selection-status" role="status" aria-live="polite">Select a brand, then your model to see compatible part categories.</p>
+    <div class="vehicle-categories" id="vehicle-categories" aria-label="Available part categories" hidden></div>
+  </div>
 </div>
 <div class="filters" aria-label="Filter category groups">
   <button type="button" class="active" aria-pressed="true" data-filter="all">

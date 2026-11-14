@@ -147,12 +147,89 @@ nav a:last-child {
   padding: 85px 5%;
 }
 .section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  display: block;
 }
 .section-top .tiny {
-  padding-top: 14px;
+  display: block;
+  margin-bottom: 18px;
+}
+.vehicle-finder {
+  max-width: 1180px;
+}
+.vehicle-finder h2 {
+  max-width: 760px;
+}
+.vehicle-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 42px;
+  background: #bbb;
+  border: 1px solid #bbb;
+}
+.vehicle-steps label {
+  margin: 0;
+  padding: 18px 20px 20px;
+  background: #f4f4f2;
+}
+.vehicle-steps label > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.vehicle-steps label b {
+  color: #999;
+  font-weight: 400;
+}
+.vehicle-steps select {
+  width: 100%;
+  margin: 0;
+  padding: 12px 34px 12px 0;
+  border: 0;
+  border-bottom: 1px solid #111;
+  border-radius: 0;
+  background-color: transparent;
+  color: #111;
+  font-size: clamp(18px, 2vw, 25px);
+}
+.vehicle-steps select:disabled {
+  color: #999;
+  border-color: #bbb;
+  cursor: not-allowed;
+}
+.vehicle-selection-status {
+  margin: 16px 0 0;
+  color: #555;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.vehicle-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.vehicle-categories[hidden] {
+  display: none;
+}
+.vehicle-categories a {
+  padding: 11px 14px;
+  border: 1px solid #aaa;
+  color: #111;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.vehicle-categories a:hover,
+.vehicle-categories a:focus-visible {
+  background: #111;
+  color: #fff;
+  border-color: #111;
 }
 h2 {
   margin: 0;
@@ -441,7 +518,26 @@ a:hover {
   }
   .section-top .tiny {
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 16px;
+  }
+  .vehicle-steps {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+  .vehicle-steps label {
+    padding: 16px;
+  }
+  .vehicle-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .vehicle-categories[hidden] {
+    display: none;
+  }
+  .vehicle-categories a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
   }
   .grid {
     grid-template-columns: 1fr;
